@@ -19,6 +19,7 @@ class NotificationService: UNNotificationServiceExtension {
         
         if let bestAttemptContent = bestAttemptContent {
             guard let contentIdentifier = bestAttemptContent.userInfo["content_id"] as? Int else { contentHandler(bestAttemptContent); return }
+            
             downloadFeed(byIdentifier: contentIdentifier) { jsonData in
                 guard let jsonData = jsonData,
                     summary = jsonData["summary"] as? String,

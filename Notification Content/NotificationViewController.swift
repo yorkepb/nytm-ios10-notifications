@@ -12,7 +12,8 @@ import UserNotificationsUI
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
 
-    @IBOutlet var label: UILabel?
+    @IBOutlet var label: UILabel!
+    @IBOutlet var summaryLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +21,18 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
 
     func didReceive(_ notification: UNNotification) {
+
         guard let headline = notification.request.content.userInfo["headline"] as? String else { return }
 
-        self.label?.text = headline
+        self.label.text = headline
+        self.summaryLabel.text = "This is the summary"
+
+        guard let summary = notification.request.content.userInfo["summary"] as? String else {
+            self.summaryLabel?.text = "summary loading failed"
+            return
+        }
+
+        self.summaryLabel.text = summary
+
     }
-    
 }
