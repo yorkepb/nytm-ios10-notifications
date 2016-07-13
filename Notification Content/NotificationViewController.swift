@@ -12,8 +12,8 @@ import UserNotificationsUI
 
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
 
-    @IBOutlet var label: UILabel?
-    @IBOutlet var secondLabel: UILabel?
+    @IBOutlet var headlineLabel: UILabel?
+    @IBOutlet var summaryLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +24,8 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         guard let headline = notification.request.content.userInfo["headline"] as? String,
             summary = notification.request.content.userInfo["summary"] as? String else { return }
 
-        self.label?.text = headline
-        self.secondLabel?.text = summary
+        self.headlineLabel?.text = headline
+        self.summaryLabel?.text = summary
     }
 
 }
