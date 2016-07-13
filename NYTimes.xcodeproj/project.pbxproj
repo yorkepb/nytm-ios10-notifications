@@ -10,8 +10,8 @@
 		8621E9AC1D36B4E400BA1587 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8621E9AB1D36B4E300BA1587 /* UserNotifications.framework */; };
 		8621E9AE1D36B4E400BA1587 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8621E9AD1D36B4E400BA1587 /* UserNotificationsUI.framework */; };
 		8621E9B11D36B4E400BA1587 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8621E9B01D36B4E400BA1587 /* NotificationViewController.swift */; };
-		8621E9B41D36B4E400BA1587 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8621E9B21D36B4E400BA1587 /* MainInterface.storyboard */; };
 		8621E9B81D36B4E400BA1587 /* Notification Content.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8621E9A91D36B4E300BA1587 /* Notification Content.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8621E9D01D36C4C800BA1587 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8621E9C61D36C43A00BA1587 /* MainInterface.storyboard */; };
 		86353F671D35538000317706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86353F661D35538000317706 /* AppDelegate.swift */; };
 		86353F691D35538000317706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86353F681D35538000317706 /* ViewController.swift */; };
 		86353F6C1D35538000317706 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86353F6A1D35538000317706 /* Main.storyboard */; };
@@ -59,8 +59,8 @@
 		8621E9AB1D36B4E300BA1587 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		8621E9AD1D36B4E400BA1587 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		8621E9B01D36B4E400BA1587 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		8621E9B31D36B4E400BA1587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8621E9B51D36B4E400BA1587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8621E9C71D36C43A00BA1587 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		86353F631D35538000317706 /* NYTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86353F661D35538000317706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86353F681D35538000317706 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				8621E9B01D36B4E400BA1587 /* NotificationViewController.swift */,
-				8621E9B21D36B4E400BA1587 /* MainInterface.storyboard */,
+				8621E9C61D36C43A00BA1587 /* MainInterface.storyboard */,
 				8621E9B51D36B4E400BA1587 /* Info.plist */,
 			);
 			path = "Notification Content";
@@ -284,7 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8621E9B41D36B4E400BA1587 /* MainInterface.storyboard in Resources */,
+				8621E9D01D36C4C800BA1587 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,12 +350,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8621E9B21D36B4E400BA1587 /* MainInterface.storyboard */ = {
+		8621E9C61D36C43A00BA1587 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8621E9B31D36B4E400BA1587 /* Base */,
+				8621E9C71D36C43A00BA1587 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			path = ../test;
 			sourceTree = "<group>";
 		};
 		86353F6A1D35538000317706 /* Main.storyboard */ = {
