@@ -1,5 +1,5 @@
 # nytm-ios10-notifications
-An iOS 10 Implementation of Notifications for NYTM
+An iOS 10 Prototype Implementation of Notifications for NYTMobile
 
 Author: iYrke - <paul.yorke@nytimes.com>
 
@@ -13,4 +13,4 @@ To run this application you must use xcode 8 running on iOS 10+. To test, send a
 {"aps":{"alert":{"title":"Breaking News", "subtitle": "developing", "body": "Two years after Eric Garner died in a police chokehold, the case has stalled. “How much investigation do you need?” his widow said."}, "sound":"default", "category":"follow", "mutable-content": 1}, "content_id":12345}
 ```
 
-To debug the app be sure to run the appropriate scheme based on which binary you are working with, service extension, content extension and main app. 
+To debug the app, be sure to run the appropriate scheme based on which binary you are working with, service extension, content extension and main app. 
