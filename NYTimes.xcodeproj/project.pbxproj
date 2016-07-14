@@ -16,6 +16,8 @@
 		86353F6C1D35538000317706 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86353F6A1D35538000317706 /* Main.storyboard */; };
 		86353F6E1D35538000317706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86353F6D1D35538000317706 /* Assets.xcassets */; };
 		86353F711D35538000317706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86353F6F1D35538000317706 /* LaunchScreen.storyboard */; };
+		867495F11D37F5D300DD7BA5 /* NYTCheltenham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 867495EF1D37F5D300DD7BA5 /* NYTCheltenham-Bold.otf */; };
+		867495F21D37F5D300DD7BA5 /* NYTCheltenhamSH-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 867495F01D37F5D300DD7BA5 /* NYTCheltenhamSH-Regular.otf */; };
 		8693F8A61D3558EA002B7943 /* UserNotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8693F8A51D3558EA002B7943 /* UserNotificationsController.swift */; };
 		86B674D81D35936D009F5BE9 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B674D71D35936D009F5BE9 /* NotificationService.swift */; };
 		86B674DC1D35936D009F5BE9 /* Notification Service Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 86B674D51D35936D009F5BE9 /* Notification Service Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -66,6 +68,8 @@
 		86353F6D1D35538000317706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86353F701D35538000317706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86353F721D35538000317706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		867495EF1D37F5D300DD7BA5 /* NYTCheltenham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NYTCheltenham-Bold.otf"; path = "../../../../Desktop/NYTCheltenham-Bold.otf"; sourceTree = "<group>"; };
+		867495F01D37F5D300DD7BA5 /* NYTCheltenhamSH-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NYTCheltenhamSH-Regular.otf"; path = "../../../../Desktop/NYTCheltenhamSH-Regular.otf"; sourceTree = "<group>"; };
 		8693F8A51D3558EA002B7943 /* UserNotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNotificationsController.swift; sourceTree = "<group>"; };
 		8693F8A71D3568A0002B7943 /* NYTimes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NYTimes.entitlements; sourceTree = "<group>"; };
 		86B674D51D35936D009F5BE9 /* Notification Service Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Notification Service Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +116,7 @@
 		8621E9D81D36D0AC00BA1587 /* Notification Content */ = {
 			isa = PBXGroup;
 			children = (
+				867495F31D37F5D800DD7BA5 /* Resources */,
 				8621E9D91D36D0AC00BA1587 /* NotificationViewController.swift */,
 				8621E9DB1D36D0AC00BA1587 /* MainInterface.storyboard */,
 				8621E9DE1D36D0AC00BA1587 /* Info.plist */,
@@ -152,6 +157,15 @@
 				86353F721D35538000317706 /* Info.plist */,
 			);
 			path = NYTimes;
+			sourceTree = "<group>";
+		};
+		867495F31D37F5D800DD7BA5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				867495EF1D37F5D300DD7BA5 /* NYTCheltenham-Bold.otf */,
+				867495F01D37F5D300DD7BA5 /* NYTCheltenhamSH-Regular.otf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		86B674D61D35936D009F5BE9 /* Notification Service Extension */ = {
@@ -282,6 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8621E9DD1D36D0AC00BA1587 /* MainInterface.storyboard in Resources */,
+				867495F11D37F5D300DD7BA5 /* NYTCheltenham-Bold.otf in Resources */,
+				867495F21D37F5D300DD7BA5 /* NYTCheltenhamSH-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
