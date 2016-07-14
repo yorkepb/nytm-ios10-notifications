@@ -20,6 +20,11 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NYTCheltenham-Bold.otf</string>
+		<string>NYTCheltenhamSH-Regular.otf</string>
+	</array>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionAttributes</key>
@@ -27,7 +32,7 @@
 			<key>UNNotificationExtensionCategory</key>
 			<string>follow</string>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
-			<real>1</real>
+			<real>1.25</real>
 			<key>UNNotificationExtensionDefaultContentHidden</key>
 			<string>true</string>
 		</dict>
