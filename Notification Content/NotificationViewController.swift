@@ -30,6 +30,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     @IBOutlet private weak var summaryLabel: UILabel!
     @IBOutlet private weak var topImage: UIImageView!
     @IBOutlet private weak var mainView: UIView!
+    @IBOutlet private weak var HUDView: UIView!
 
     /**
      An Enum just for providing styling to the textual content.
@@ -94,6 +95,21 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
                 attachment.url.stopAccessingSecurityScopedResource()
             }
+        }
+    }
+
+    func didReceive(_ response: UNNotificationResponse, completionHandler completion: (UNNotificationContentExtensionResponseOption) -> Void) {
+        
+        if response.actionIdentifier == InteractiveNotifications.Save.rawValue {
+            DispatchQueue.main.after(when:  DispatchTime.now() + Double(Int64(0.3 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+                self.HUDView.isHidden = false
+            }
+
+            DispatchQueue.main.after(when:  DispatchTime.now() + Double(Int64(1.3 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
+                completion(.dismissAndForwardAction)
+            }
+        } else {
+            completion(.dismissAndForwardAction)
         }
     }
 
