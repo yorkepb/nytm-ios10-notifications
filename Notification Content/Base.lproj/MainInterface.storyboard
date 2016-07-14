@@ -34,6 +34,30 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaK-t6-fdh">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article Saved" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqL-A9-iGK">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="2iE-Vr-vNm"/>
+                                            <constraint firstAttribute="width" constant="65" id="Zz5-O9-ihE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oqL-A9-iGK" firstAttribute="centerX" secondItem="GaK-t6-fdh" secondAttribute="centerX" id="0xg-Gz-ag8"/>
+                                    <constraint firstAttribute="width" constant="100" id="D1p-Eo-4r3"/>
+                                    <constraint firstItem="oqL-A9-iGK" firstAttribute="centerY" secondItem="GaK-t6-fdh" secondAttribute="centerY" id="Kcu-jW-rCL"/>
+                                    <constraint firstAttribute="height" constant="100" id="YXD-JS-6AD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="10"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -42,6 +66,8 @@
                             <constraint firstAttribute="trailing" secondItem="NoF-xe-rrr" secondAttribute="trailing" id="Bm1-n2-6OL"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="6rT-bB-GiO" secondAttribute="trailing" id="IqY-sE-3ZT"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="Lck-S0-FiJ"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="GaK-t6-fdh" secondAttribute="bottom" constant="40" id="LhT-rV-LvU"/>
+                            <constraint firstItem="GaK-t6-fdh" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="Ojh-OO-HGB"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="NoF-xe-rrr" secondAttribute="bottom" constant="15" id="PUs-dD-RHr"/>
                             <constraint firstItem="NoF-xe-rrr" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="a5A-rM-UPR"/>
                             <constraint firstItem="6rT-bB-GiO" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="hvW-Bl-lh8"/>
@@ -56,6 +82,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="250"/>
                     <connections>
+                        <outlet property="HUDView" destination="GaK-t6-fdh" id="ljN-LC-IE5"/>
                         <outlet property="headlineLabel" destination="GcN-lo-r42" id="J2V-w5-mpv"/>
                         <outlet property="mainView" destination="S3S-Oj-5AN" id="gRG-Yj-dvS"/>
                         <outlet property="summaryLabel" destination="6rT-bB-GiO" id="WVp-Gm-gg4"/>

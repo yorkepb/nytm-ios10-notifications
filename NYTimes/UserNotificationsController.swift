@@ -16,36 +16,15 @@ import UserNotifications
  */ 
 class UserNotificationController: NSObject, UNUserNotificationCenterDelegate {
 
-    // MARK: Interactive Notifications (ancillary to the prototype)
-
-    /**
-     An enum provided to contain information relative to the notification actions. This is provided as a means of easily identifying action strings in other locations of the app (for handling notification action responses from users)
-     */
-    enum NotificationActions: String {
-        case Follow = "follow"
-        case Read = "read"
-
-        private func title() -> String {
-            switch self {
-                case .Follow:
-                    return "Follow for Updates"
-                case .Read:
-                    return "Read Story"
-            }
-        }
-    }
-
-    /**
-     Two notification actions used for interactive notifications here just as examples. This is functionality introduced in iOS 8, not new to iOS 10 however the object types have changed from `UIUserNotificationAction` to the new `UNNotificationAction`. Everything else about how this functions is the same.
-     */
-    private static var followAction = UNNotificationAction(identifier: NotificationActions.Follow.rawValue, title: NotificationActions.Follow.title(), options: [])
-    private static var readAction = UNNotificationAction(identifier: NotificationActions.Read.rawValue, title: NotificationActions.Read.title(), options: [.foreground])
-    
     /**
      This is also not new and provided simply for functionality in notifications. This is functionality introduced in iOS 8, not new to iOS 10 however the object types have changed from `UIUserNotificationCategoru` to the new `UNNotificationCategory`. Everything else about how this functions is the same. 
      */
     private var followCategory: UNNotificationCategory = {
-        return UNNotificationCategory(identifier: NotificationActions.Follow.rawValue, actions: [UserNotificationController.readAction, UserNotificationController.followAction], minimalActions: [UserNotificationController.readAction, UserNotificationController.followAction], intentIdentifiers: [], options: [])
+        return UNNotificationCategory(identifier: "follow", actions: [InteractiveNotifications.Read.action(), InteractiveNotifications.Follow.action()], minimalActions: [InteractiveNotifications.Read.action(), InteractiveNotifications.Follow.action()], intentIdentifiers: [], options: [])
+    }()
+
+    private var saveCategory: UNNotificationCategory = {
+        return UNNotificationCategory(identifier: "save", actions: [InteractiveNotifications.Read.action(), InteractiveNotifications.Save.action()], minimalActions: [InteractiveNotifications.Read.action(), InteractiveNotifications.Save.action()], intentIdentifiers: [], options: [])
     }()
 
     override init() {
@@ -87,7 +66,7 @@ class UserNotificationController: NSObject, UNUserNotificationCenterDelegate {
                 /**
                  This again hasn't changed and is all about setting up the categorie created above. There can be many categories, each category corresponds to a given set of Interactive Notifications, but will also be used to select a Notification Content Extension if you choose to have a custom view for your notifications. Each extension may have multiple categories however each category may only be assigned to a single extension. Additionally the category will influence the storyboard scene used for the Watch App when presenting a notification.
                  */
-                UNUserNotificationCenter.current().setNotificationCategories(Set([self.followCategory]))
+                UNUserNotificationCenter.current().setNotificationCategories(Set([self.followCategory, self.saveCategory]))
             }
         }
     }
@@ -107,7 +86,7 @@ class UserNotificationController: NSObject, UNUserNotificationCenterDelegate {
      This function is a call back made when a push notification has been interacted with by the user for example, either tapping the notification to launch the app or tapping one of the interactive notification actions. This will be your opportunity to respond to the actions and/or present additional information based on the notification. Be sure to call the completionHandler within a reasonable amount of time.
      */
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -> Void) {
-        print(response.notification.request.content.userInfo)
+        print(response.notification.request.content)
         completionHandler()
     }
 }

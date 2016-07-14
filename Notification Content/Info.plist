@@ -30,7 +30,10 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>UNNotificationExtensionCategory</key>
-			<string>follow</string>
+			<array>
+				<string>follow</string>
+				<string>save</string>
+			</array>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
 			<real>1.25</real>
 			<key>UNNotificationExtensionDefaultContentHidden</key>
