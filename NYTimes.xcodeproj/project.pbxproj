@@ -13,7 +13,6 @@
 		8621E9DD1D36D0AC00BA1587 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8621E9DB1D36D0AC00BA1587 /* MainInterface.storyboard */; };
 		8621E9E11D36D0AC00BA1587 /* Notification Content.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8621E9D51D36D0AC00BA1587 /* Notification Content.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		86353F671D35538000317706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86353F661D35538000317706 /* AppDelegate.swift */; };
-		86353F691D35538000317706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86353F681D35538000317706 /* ViewController.swift */; };
 		86353F6C1D35538000317706 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86353F6A1D35538000317706 /* Main.storyboard */; };
 		86353F6E1D35538000317706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86353F6D1D35538000317706 /* Assets.xcassets */; };
 		86353F711D35538000317706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86353F6F1D35538000317706 /* LaunchScreen.storyboard */; };
@@ -63,7 +62,6 @@
 		8621E9DE1D36D0AC00BA1587 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86353F631D35538000317706 /* NYTimes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTimes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86353F661D35538000317706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		86353F681D35538000317706 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		86353F6B1D35538000317706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86353F6D1D35538000317706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86353F701D35538000317706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				8693F8A71D3568A0002B7943 /* NYTimes.entitlements */,
 				86353F661D35538000317706 /* AppDelegate.swift */,
 				8693F8A51D3558EA002B7943 /* UserNotificationsController.swift */,
-				86353F681D35538000317706 /* ViewController.swift */,
 				86353F6A1D35538000317706 /* Main.storyboard */,
 				86353F6D1D35538000317706 /* Assets.xcassets */,
 				86353F6F1D35538000317706 /* LaunchScreen.storyboard */,
@@ -320,7 +317,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86353F691D35538000317706 /* ViewController.swift in Sources */,
 				8693F8A61D3558EA002B7943 /* UserNotificationsController.swift in Sources */,
 				86353F671D35538000317706 /* AppDelegate.swift in Sources */,
 			);
@@ -563,6 +559,7 @@
 				8621E9E41D36D0AC00BA1587 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86353F5E1D35538000317706 /* Build configuration list for PBXProject "NYTimes" */ = {
 			isa = XCConfigurationList;
