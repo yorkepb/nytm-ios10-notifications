@@ -98,6 +98,15 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
         }
     }
 
+    /**
+     This optional function may be implemented if you wish to intercept interactive notification actions as they are used. When a user taps on a particular interactive notification action, implementing this method will first send the action here allowing for the update of the UI or for action to be taken here before continuing. Once you are done you must call the completion with one of three options:
+     
+         .doNotDismiss: Finishes with the action but does nothing more. The user must then dismiss the notification manually.
+         .dismiss: Dismisses the notification and completes the action and does not send _anything_ to the main application.
+         .dismissAndForwardAction: Dismisses the notification and sends the action to be handled by the main application.
+     
+      In WWDC they stated that doing this would cause a delay in the dismissal, giving you a chance to updat ethe UI for the user before the alert is dismissed. However because I am not seeing any delay, I added the Dispatch After as a means of faking that delay. In the case below, if the user tapped the "Save for Later" interactive action, I am displaying a HUD indicating the article was saved and then dismissing and forwarding to the main application to actually handle the save.
+     */
     func didReceive(_ response: UNNotificationResponse, completionHandler completion: (UNNotificationContentExtensionResponseOption) -> Void) {
         
         if response.actionIdentifier == InteractiveNotifications.Save.rawValue {
