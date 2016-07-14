@@ -38,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     /**
      Introduced in iOS 7, this function replaced the `didReceiveRemoteNotification` function which did not contain a completion handler. This function use to be used for capturing remote notifications which either were received while the app was foregrounded or that the user interacted with. Now this function is much more specific to handling background fetch calls made through push notifications by including the `"content-available":1` key/value pair in your payload. Doing so will pass the notification and payload through to this API the moment that the push notification is received rather than having to wait for your user to interact with it. This will give you the opportunity to log an analytic about the push notification being received as well as prepare your application for the updated content. Be aware though that if the user manually force quits the app by swiping up in the app switcher or if your app crashes, this API will not receive any call backs until the next time the app is launched. Additionally if you do not call the completionHandler within a timely manner, your app will crash.
+     
+      NOTE: If you do not implement `userNotificationCenter(_:willPresent notificaiton:)` in your UNUserNotificationCenterDelegate then Push Notifications received while the app is in the foreground will be sent to this API.
      */
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         print("did receive remote notification (background) with userInfo: \(userInfo)")

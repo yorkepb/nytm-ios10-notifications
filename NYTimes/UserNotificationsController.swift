@@ -76,7 +76,7 @@ class UserNotificationController: NSObject, UNUserNotificationCenterDelegate {
     /**
      This function is a call back which is made when a push notification is received while the app is in the foreground. This will give you the opportunity to prepare for the push notification and decide whether or not the notification should be presented to the user by the system. This function is optional and if it is not implemented OR if the completionHandler is not called within a set time limit the notification will not be presented to the user. Use this method to determine how to present the notification to the user.
      
-     TODO: Figure out what call back is made for in-app notifications if this method is not implemented.
+     If this function is not implemented then push notifications received while the app is int he foreground will be sent through the old `didReceiveRemoteNotifications` API of the AppDelegate.
      */
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound])
