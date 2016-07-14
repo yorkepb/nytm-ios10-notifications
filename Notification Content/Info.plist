@@ -32,7 +32,7 @@
 			<key>UNNotificationExtensionCategory</key>
 			<string>follow</string>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
-			<real>1.5</real>
+			<real>1.25</real>
 			<key>UNNotificationExtensionDefaultContentHidden</key>
 			<string>true</string>
 		</dict>

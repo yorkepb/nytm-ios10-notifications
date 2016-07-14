@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  NYTimes
 //
-//  Created by yorkepb on 7/12/16.
+//  Created by iYrke on 7/12/16.
 //  Copyright © 2016 iYorke. All rights reserved.
 //
 
