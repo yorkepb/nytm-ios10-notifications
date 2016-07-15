@@ -27,6 +27,10 @@ class UserNotificationController: NSObject, UNUserNotificationCenterDelegate {
         return UNNotificationCategory(identifier: "save", actions: [InteractiveNotifications.Read.action(), InteractiveNotifications.Save.action()], minimalActions: [InteractiveNotifications.Read.action(), InteractiveNotifications.Save.action()], intentIdentifiers: [], options: [])
     }()
 
+    private var interactiveCategory: UNNotificationCategory = {
+        return UNNotificationCategory(identifier: "interactive", actions: [InteractiveNotifications.Read.action(), InteractiveNotifications.Follow.action()], minimalActions: [InteractiveNotifications.Read.action(), InteractiveNotifications.Follow.action()], intentIdentifiers: [], options: [])
+    }()
+
     override init() {
         super.init()
         
@@ -66,7 +70,7 @@ class UserNotificationController: NSObject, UNUserNotificationCenterDelegate {
                 /**
                  This again hasn't changed and is all about setting up the categorie created above. There can be many categories, each category corresponds to a given set of Interactive Notifications, but will also be used to select a Notification Content Extension if you choose to have a custom view for your notifications. Each extension may have multiple categories however each category may only be assigned to a single extension. Additionally the category will influence the storyboard scene used for the Watch App when presenting a notification.
                  */
-                UNUserNotificationCenter.current().setNotificationCategories(Set([self.followCategory, self.saveCategory]))
+                UNUserNotificationCenter.current().setNotificationCategories(Set([self.followCategory, self.saveCategory, self.interactiveCategory]))
             }
         }
     }

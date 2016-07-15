@@ -47,6 +47,13 @@ class NotificationService: UNNotificationServiceExtension {
                 bestAttemptContent.userInfo["headline"] = headline
                 bestAttemptContent.threadIdentifier = "\(contentIdentifier)"
 
+                if let type = jsonData["type"] as? String where type == "interactive" {
+                    guard let interactiveURLString = jsonData["interactiveURL"] as? String else { contentHandler(bestAttemptContent); return }
+
+                    bestAttemptContent.userInfo["interactiveURLString"] = interactiveURLString
+                    contentHandler(bestAttemptContent)
+                }
+
                 self.download(fromURL: imageURL) { location in
                     guard let location = location else { contentHandler(bestAttemptContent); return }
 
