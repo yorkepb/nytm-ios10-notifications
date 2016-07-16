@@ -42,7 +42,12 @@ class NotificationService: UNNotificationServiceExtension {
                     headline = jsonData["headline"] as? String,
                     imageURLString = jsonData["image"] as? String,
                     imageURL = URL(string: imageURLString) else { contentHandler(bestAttemptContent); return }
-
+                    
+                    
+                // TODO: Infer the desired category apply to `bestAttemptContent`
+                //       Set the title correctly
+                //       Setup `alert` as a dictionary
+                // NOTE: One thing we cannot do here is set the identifier of this notification, this can only be done through headers using the http/2 API. 
                 bestAttemptContent.userInfo["summary"] = summary
                 bestAttemptContent.userInfo["headline"] = headline
                 bestAttemptContent.threadIdentifier = "\(contentIdentifier)"
@@ -51,7 +56,10 @@ class NotificationService: UNNotificationServiceExtension {
                     guard let interactiveURLString = jsonData["interactiveURL"] as? String else { contentHandler(bestAttemptContent); return }
 
                     bestAttemptContent.userInfo["interactiveURLString"] = interactiveURLString
+                    
+                    // TODO: apply correct category at this point
                     contentHandler(bestAttemptContent)
+                    return
                 }
 
                 self.download(fromURL: imageURL) { location in
