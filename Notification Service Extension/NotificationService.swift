@@ -53,13 +53,10 @@ class NotificationService: UNNotificationServiceExtension {
                 bestAttemptContent.threadIdentifier = "\(contentIdentifier)"
 
                 if let type = jsonData["type"] as? String where type == "interactive" {
-                    guard let interactiveURLString = jsonData["interactiveURL"] as? String else { contentHandler(bestAttemptContent); return }
-
-                    bestAttemptContent.userInfo["interactiveURLString"] = interactiveURLString
+                    guard let interactiveURLString = jsonData["interactiveURL"] as? String else { return contentHandler(bestAttemptContent) }   
                     
-                    // TODO: apply correct category at this point
-                    contentHandler(bestAttemptContent)
-                    return
+                    bestAttemptContent.userInfo["interactiveURLString"] = interactiveURLString        
+                    return contentHandler(bestAttemptContent)
                 }
 
                 self.download(fromURL: imageURL) { location in
